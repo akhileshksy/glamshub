@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Report an incident · GLAMSHUB</title>
+<meta name="description" content="Tell GLAMSHUB about damage, destruction or looting of a gallery, library, archive or museum.">
+<link rel="canonical" href="https://akhileshksy.github.io/glamshubs/report.html">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>try{var t=localStorage.getItem('glamshub-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="assets/js/app.js" defer></script>
+</head>
+<body data-page="report">
+<div id="site-header"></div>
+<main id="main">
+  <div class="container">
+    <div class="page-head">
+      <span class="eyebrow">Contribute</span>
+      <h1>Report an incident</h1>
+      <p>Fill in what you know. The button opens a pre-filled GitHub issue that a maintainer will review before anything is published. You need a free GitHub account to submit it.</p>
+    </div>
+    <form id="report-form" class="form-grid">
+      <div class="wide"><label for="r-institution">Institution name *</label><input type="text" id="r-institution" required placeholder="e.g. Central Library of …"></div>
+      <div><label for="r-location">City / country</label><input type="text" id="r-location" placeholder="e.g. Kharkiv, Ukraine"></div>
+      <div><label for="r-date">Date of the incident</label><input type="text" id="r-date" placeholder="YYYY-MM-DD, or approximate"></div>
+      <div><label for="r-institution_type">Institution type</label>
+        <select id="r-institution_type"><option>Library</option><option>Museum</option><option>Archive</option><option>Gallery</option><option>Multiple / GLAM</option><option>Other</option></select></div>
+      <div><label for="r-cause">Cause</label>
+        <select id="r-cause"><option>War / armed conflict</option><option>Looting / theft</option><option>Deliberate destruction</option><option>Fire</option><option>Flood / water damage</option><option>Earthquake</option><option>Structural collapse</option><option>Neglect / decay</option><option>Other / unknown</option></select></div>
+      <div><label for="r-status">Status</label>
+        <select id="r-status"><option>Damaged</option><option>Destroyed</option><option>Looted</option><option>At risk</option></select></div>
+      <div><label for="r-source">Source link *</label><input type="url" id="r-source" required placeholder="https://…"></div>
+      <div class="wide"><label for="r-details">What happened? (your own words)</label><textarea id="r-details" placeholder="Short factual description. Please do not paste whole articles."></textarea></div>
+      <div class="wide"><button class="btn" type="submit">Open pre-filled GitHub issue</button></div>
+      <div class="wide note">No GitHub account? Create a free one, or ask a colleague who has one to submit it for you. Please include a link to a published source so the report can be checked.</div>
+    </form>
+  </div>
+</main>
+<div id="site-footer"></div>
+</body>
+</html>

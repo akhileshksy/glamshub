@@ -1,0 +1,60 @@
+{
+  "_help": "Edit this file to change what the collector searches for. Queries use Google News / GDELT syntax. Feed URLs under rss_feeds are fetched as-is; add feeds you have checked yourself.",
+  "google_news": {
+    "enabled": true,
+    "when": "2d",
+    "editions": [
+      { "hl": "en-IN", "gl": "IN", "ceid": "IN:en" },
+      { "hl": "en-US", "gl": "US", "ceid": "US:en" }
+    ],
+    "queries": [
+      "museum destroyed OR damaged OR looted war",
+      "library destroyed OR bombed OR shelled OR burned",
+      "archive destroyed OR burned OR looted OR flooded",
+      "national library damaged conflict",
+      "museum airstrike OR shelling OR missile",
+      "museum fire OR arson",
+      "library fire",
+      "archives flood damage",
+      "art gallery destroyed OR damaged war",
+      "cultural heritage museum looted"
+    ],
+    "extra_languages": [
+      { "hl": "fr", "gl": "FR", "ceid": "FR:fr", "queries": ["musée détruit OR bombardé OR pillé", "bibliothèque détruite OR incendie", "archives détruites OR incendie"] },
+      { "hl": "es", "gl": "ES", "ceid": "ES:es", "queries": ["museo destruido OR saqueado OR incendio", "biblioteca destruida OR incendio", "archivo destruido OR incendio"] },
+      { "hl": "ar", "gl": "EG", "ceid": "EG:ar", "queries": ["تدمير متحف", "قصف مكتبة", "نهب متحف", "حريق أرشيف"] },
+      { "hl": "uk", "gl": "UA", "ceid": "UA:uk", "queries": ["музей знищено обстріл", "бібліотека зруйнована обстріл", "архів знищено"] },
+      { "hl": "ru", "gl": "RU", "ceid": "RU:ru", "queries": ["музей разрушен обстрел", "библиотека разрушена", "архив уничтожен"] }
+    ]
+  },
+  "gdelt": {
+    "enabled": true,
+    "timespan": "1d",
+    "maxrecords": 60,
+    "queries": [
+      "(museum OR library OR archive) (destroyed OR bombed OR shelled OR looted) sourcelang:english",
+      "(museum OR library OR archive) (fire OR flood OR collapse) sourcelang:english",
+      "(musée OR bibliothèque) (détruit OR pillé OR incendie) sourcelang:french"
+    ]
+  },
+  "rss_feeds": [],
+  "rules": {
+    "institution_terms": [
+      "museum", "library", "libraries", "archive", "archives", "gallery", "galleries", "manuscript",
+      "musée", "bibliothèque", "archives", "galerie", "museo", "biblioteca", "archivo", "galería",
+      "متحف", "مكتبة", "أرشيف", "музей", "бібліотек", "библиотек", "архів", "архив", "музеї"
+    ],
+    "damage_terms": [
+      "destroy", "damag", "bomb", "shell", "strike", "struck", "loot", "burn", "fire", "blaze", "arson",
+      "flood", "collaps", "raze", "ruin", "attack", "ransack", "plunder", "pillag", "stolen", "theft",
+      "earthquake", "vandal", "missile", "airstrike", "drone",
+      "détrui", "bombard", "pillé", "incendie", "inondation", "destruid", "saque", "incendio", "inundaci",
+      "تدمير", "دمر", "قصف", "نهب", "حريق", "سرقة", "знищ", "зруйнов", "обстріл", "обстрел", "разруш", "уничтож", "пожеж", "пожар"
+    ],
+    "exclude_terms": [
+      "python library", "javascript library", "npm ", "github", "album review", "movie review", "film review",
+      "trailer", "football", "cricket", "nfl", "nba", "wwe", "video game", "stock market", "box office",
+      "internet archive", "wayback", "photo gallery", "image gallery", "slideshow", "fire sale"
+    ]
+  }
+}

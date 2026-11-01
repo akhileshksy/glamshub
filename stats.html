@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Statistics · GLAMSHUB</title>
+<meta name="description" content="Counts of recorded GLAM incidents by year, country, cause, institution type and status.">
+<link rel="canonical" href="https://akhileshksy.github.io/glamshubs/stats.html">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>try{var t=localStorage.getItem('glamshub-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="assets/js/app.js" defer></script>
+</head>
+<body data-page="stats">
+<div id="site-header"></div>
+<main id="main">
+  <div class="container">
+    <div class="page-head">
+      <span class="eyebrow">Numbers</span>
+      <h1>Statistics</h1>
+      <p>Counts are of records in this dataset, not a census of all losses. Automatically collected records are included until a person reviews them, so treat recent figures as provisional.</p>
+    </div>
+    <div class="stat-tiles">
+      <div class="tile"><b id="s-total">…</b><span>Records</span></div>
+      <div class="tile"><b id="s-countries">…</b><span>Countries</span></div>
+      <div class="tile"><b id="s-destroyed">…</b><span>Destroyed</span></div>
+      <div class="tile"><b id="s-auto">…</b><span>Awaiting review</span></div>
+    </div>
+    <div class="panel" style="margin-bottom:1.2rem"><h2>Incidents per year</h2><div id="by-year"><p class="loading">Loading…</p></div></div>
+    <div class="panels">
+      <div class="panel"><h2>By status</h2><div id="by-status"></div></div>
+      <div class="panel"><h2>By cause</h2><div id="by-cause"></div></div>
+      <div class="panel"><h2>By institution type</h2><div id="by-type"></div></div>
+      <div class="panel"><h2>By country (top 15)</h2><div id="by-country"></div></div>
+    </div>
+  </div>
+</main>
+<div id="site-footer"></div>
+</body>
+</html>

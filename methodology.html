@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Methodology and corrections · GLAMSHUB</title>
+<meta name="description" content="How GLAMSHUB collects, classifies, deduplicates and verifies reports of GLAM destruction, and how to request corrections.">
+<link rel="canonical" href="https://akhileshksy.github.io/glamshubs/methodology.html">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>try{var t=localStorage.getItem('glamshub-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="assets/js/app.js" defer></script>
+</head>
+<body data-page="methodology">
+<div id="site-header"></div>
+<main id="main">
+  <div class="container">
+    <div class="page-head">
+      <span class="eyebrow">Method</span>
+      <h1>Methodology and corrections</h1>
+      <p>How a news story becomes a record, what we do not know, and how to tell us we are wrong.</p>
+    </div>
+    <div class="prose" style="padding-bottom:2rem">
+      <h2>1. Collection</h2>
+      <p>A scheduled GitHub Actions job runs every six hours. It queries Google News RSS in several languages (English, French, Spanish, Arabic, Ukrainian and Russian), the GDELT news index, and any extra RSS feeds listed in <code>scripts/sources.json</code>. Queries combine institution words (museum, library, archive, gallery) with damage words (destroyed, shelled, looted, burned, flooded and similar).</p>
+      <h2>2. Filtering and deduplication</h2>
+      <p>Headlines must contain both an institution term and a damage term, and must not match a list of exclusions (sports, software, entertainment). The same story is often carried by many outlets, so new headlines are compared with recent records by URL and by title similarity. Near-duplicates are attached to the existing record as extra sources instead of creating a new one. This is imperfect: two different headlines about one event can still become two records, and curators merge them by hand.</p>
+      <h2>3. Classification</h2>
+      <p>Each headline is classified by simple multilingual keyword rules for institution type, cause and status, and located using a built-in gazetteer of countries and conflict-zone cities. When a Claude API key is configured, a small language model reads the headline and returns structured fields and a one-sentence neutral restatement. The model is instructed to use only what the headline says and to leave fields empty when unsure. Automated classification makes mistakes, which is why every machine-made record is labelled.</p>
+      <h2>4. Verification levels</h2>
+      <ul>
+        <li><strong>Automated, unverified:</strong> created by the collector, not yet checked by a person.</li>
+        <li><strong>Reported:</strong> checked by a person against at least one credible published report.</li>
+        <li><strong>Verified:</strong> confirmed by an authoritative body (for example UNESCO, a national heritage authority or the institution itself) or by two independent credible sources.</li>
+      </ul>
+      <h2>5. Locations</h2>
+      <p>Map positions are usually the centre of a city or region, not the building. Each record says which precision applies. Where the location is not known, the record appears in lists but not on the map.</p>
+      <h2>6. Copyright and attribution</h2>
+      <p>We store only a headline, a date, a short neutral summary in our own words and a link to the original report. We do not copy articles. Every record links to its source so readers can judge it for themselves.</p>
+      <h2>7. Limits</h2>
+      <ul>
+        <li>News coverage is uneven. Losses in places with less press attention are under-reported, and the numbers here are not a census.</li>
+        <li>Early reports are often wrong or contested. Where claims are disputed, we attribute them to the source and mark the record accordingly.</li>
+        <li>This site is not a substitute for damage assessments by UNESCO, ICOM, the Blue Shield or national authorities.</li>
+      </ul>
+      <h2>8. Corrections policy</h2>
+      <p>Open <a href="report.html">an issue on GitHub</a> or use the “Suggest a correction” button on any record. Factual errors are corrected promptly and the change is visible in the repository history. If a source is withdrawn or discredited, the record is updated or removed. Requests from institutions to correct or update their own record are given priority.</p>
+      <h2>9. Open data</h2>
+      <p>All records are available as <a href="data/incidents.json">JSON</a>, <a href="data/incidents.csv">CSV</a> and an <a href="feed.xml">RSS feed</a>. The dataset is released under CC BY 4.0.</p>
+    </div>
+  </div>
+</main>
+<div id="site-footer"></div>
+</body>
+</html>

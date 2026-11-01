@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Map · GLAMSHUB</title>
+<meta name="description" content="World map of recorded damage to and destruction of galleries, libraries, archives and museums.">
+<link rel="canonical" href="https://akhileshksy.github.io/glamshubs/map.html">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>try{var t=localStorage.getItem('glamshub-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+<script src="assets/js/app.js" defer></script>
+</head>
+<body data-page="map">
+<div id="site-header"></div>
+<main id="main">
+  <div class="container">
+    <div class="page-head">
+      <span class="eyebrow">Geography</span>
+      <h1>Map</h1>
+      <p>Each dot is one record. Where only a city or region is known, the dot sits at its centre rather than at the building.</p>
+    </div>
+    <form class="filters" onsubmit="return false" aria-label="Filter the map">
+      <div class="wide"><label for="f-q">Search</label><input type="search" id="f-q" placeholder="Search records shown on the map"></div>
+      <div><label for="f-country">Country</label><select id="f-country"></select></div>
+      <div><label for="f-type">Institution type</label><select id="f-type"></select></div>
+      <div><label for="f-cause">Cause</label><select id="f-cause"></select></div>
+      <div><label for="f-status">Status</label><select id="f-status"></select></div>
+      <div><label for="f-verification">Verification</label><select id="f-verification"></select></div>
+      <div><label for="f-year">Year</label><select id="f-year"></select></div>
+      <input type="hidden" id="f-sort" value="new">
+      <div style="align-self:end"><button type="button" class="btn ghost" id="f-reset">Reset filters</button></div>
+    </form>
+    <div class="result-bar"><span id="count" aria-live="polite">Loading…</span></div>
+    <div id="big-map" class="map tall" aria-label="Map of recorded incidents"></div>
+    <div class="legend"><span><i style="background:#b3261e"></i>Destroyed</span><span><i style="background:#a86a06"></i>Damaged</span><span><i style="background:#6f4aa0"></i>Looted</span><span><i style="background:#1f6f6b"></i>At risk</span></div>
+  </div>
+</main>
+<div id="site-footer"></div>
+</body>
+</html>

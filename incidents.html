@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Incidents · GLAMSHUB</title>
+<meta name="description" content="Search and filter every recorded incident of damage to galleries, libraries, archives and museums, by country, cause, type and status.">
+<link rel="canonical" href="https://akhileshksy.github.io/glamshubs/incidents.html">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="GLAMSHUB incidents" href="feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>try{var t=localStorage.getItem('glamshub-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="assets/js/app.js" defer></script>
+</head>
+<body data-page="incidents">
+<div id="site-header"></div>
+<main id="main">
+  <div class="container">
+    <div class="page-head">
+      <span class="eyebrow">Database</span>
+      <h1>Incidents</h1>
+      <p>Every record, newest first. Filter by place, cause or status, or search by name. The link in your address bar keeps your filters.</p>
+    </div>
+
+    <form class="filters" onsubmit="return false" aria-label="Filter incidents">
+      <div class="wide"><label for="f-q">Search</label><input type="search" id="f-q" placeholder="e.g. Kharkiv, national library, looted"></div>
+      <div><label for="f-country">Country</label><select id="f-country"></select></div>
+      <div><label for="f-type">Institution type</label><select id="f-type"></select></div>
+      <div><label for="f-cause">Cause</label><select id="f-cause"></select></div>
+      <div><label for="f-status">Status</label><select id="f-status"></select></div>
+      <div><label for="f-verification">Verification</label><select id="f-verification"></select></div>
+      <div><label for="f-year">Year</label><select id="f-year"></select></div>
+      <div><label for="f-sort">Sort</label><select id="f-sort"><option value="new">Newest first</option><option value="old">Oldest first</option></select></div>
+      <div style="align-self:end"><button type="button" class="btn ghost" id="f-reset">Reset filters</button></div>
+    </form>
+
+    <div class="result-bar">
+      <span id="count" aria-live="polite">Loading…</span>
+      <span><a href="data/incidents.csv">CSV</a> · <a href="data/incidents.json">JSON</a> · <a href="feed.xml">RSS</a></span>
+    </div>
+    <div class="grid" id="results"><p class="loading">Loading incidents…</p></div>
+    <div class="more" id="more" hidden><button class="btn ghost" type="button">Load more</button></div>
+    <noscript><p class="note">This page needs JavaScript. Raw data: <a href="data/incidents.csv">CSV</a>, <a href="data/incidents.json">JSON</a>.</p></noscript>
+  </div>
+</main>
+<div id="site-footer"></div>
+</body>
+</html>

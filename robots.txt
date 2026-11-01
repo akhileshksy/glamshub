@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://akhileshksy.github.io/glamshubs/sitemap.xml

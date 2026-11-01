@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found · GLAMSHUB</title>
+<meta name="robots" content="noindex">
+<style>
+  :root { color-scheme: light dark; }
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; font: 400 17px/1.6 system-ui, sans-serif; background: #f4efe4; color: #1c1a17; padding: 1rem; }
+  @media (prefers-color-scheme: dark) { body { background: #15130f; color: #efe9dc; } a { color: #e0705f; } }
+  main { max-width: 34rem; }
+  h1 { font: 700 2.4rem/1.15 Georgia, serif; margin: 0 0 .5rem; }
+  code { font-family: ui-monospace, monospace; }
+  a { color: #8f2a1e; }
+</style>
+</head>
+<body>
+<main>
+  <p><code>404</code></p>
+  <h1>This page is missing from the collection.</h1>
+  <p>The address may be mistyped, or the page may have moved. Try the <a id="home" href="/">home page</a> or the <a id="inc" href="/incidents.html">incident list</a>.</p>
+</main>
+<script>
+  // Works on both github.io/<repo>/ and a custom domain at the root.
+  var base = location.hostname.slice(-10) === '.github.io' ? '/' + location.pathname.split('/')[1] + '/' : '/';
+  document.getElementById('home').href = base;
+  document.getElementById('inc').href = base + 'incidents.html';
+</script>
+</body>
+</html>

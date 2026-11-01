@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GLAMSHUB: tracking the destruction of galleries, libraries, archives and museums</title>
+<meta name="description" content="GLAMSHUB is an open, automatically updated record of damage to and destruction of galleries, libraries, archives and museums worldwide, in war, conflict and disaster.">
+<link rel="canonical" href="https://akhileshksy.github.io/glamshubs/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="GLAMSHUB: the record of GLAM institutions lost">
+<meta property="og:description" content="Automatically updated news and data on destruction of galleries, libraries, archives and museums worldwide.">
+<meta property="og:url" content="https://akhileshksy.github.io/glamshubs/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="GLAMSHUB incidents" href="feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>try{var t=localStorage.getItem('glamshub-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+<script src="assets/js/app.js" defer></script>
+</head>
+<body data-page="home">
+<div id="site-header"></div>
+<main id="main">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Galleries · Libraries · Archives · Museums</span>
+        <h1>The record of what <em>is lost.</em></h1>
+        <p class="lead">GLAMSHUB follows reports of damage, destruction and looting of cultural institutions around the world, whether from war, conflict, fire, flood or neglect. The collection updates itself several times a day.</p>
+        <form class="search-row" id="hero-search" role="search">
+          <label class="visually-hidden" for="hero-q">Search incidents</label>
+          <input type="search" id="hero-q" placeholder="Search a country, city or institution">
+          <button class="btn" type="submit">Search</button>
+        </form>
+      </div>
+      <aside class="ledger" aria-label="Collection summary">
+        <h2>Ledger</h2>
+        <dl>
+          <dt>Records</dt><dd class="big" id="l-total">…</dd>
+          <dt>Countries</dt><dd id="l-countries">…</dd>
+          <dt>Destroyed</dt><dd id="l-destroyed">…</dd>
+          <dt>Last 30 days</dt><dd id="l-recent">…</dd>
+          <dt>Updated</dt><dd id="l-updated">…</dd>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Latest reports</h2>
+        <a href="incidents.html">Browse all incidents →</a>
+      </div>
+      <div class="grid" id="latest"><p class="loading">Loading incidents…</p></div>
+      <noscript><p class="note">This site needs JavaScript to display the incident list. The raw data is available as <a href="data/incidents.csv">CSV</a> and <a href="data/incidents.json">JSON</a>.</p></noscript>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Where it happened</h2>
+        <a href="map.html">Open the full map →</a>
+      </div>
+      <div id="home-map" class="map" aria-label="Map of recorded incidents"></div>
+      <div class="legend"><span><i style="background:#b3261e"></i>Destroyed</span><span><i style="background:#a86a06"></i>Damaged</span><span><i style="background:#6f4aa0"></i>Looted</span><span><i style="background:#1f6f6b"></i>At risk</span></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-col">
+      <div class="panel">
+        <h2>Most affected countries</h2>
+        <div id="hotspots"></div>
+      </div>
+      <div class="panel">
+        <h2>By cause</h2>
+        <div id="causes"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose">
+      <h2>Know of an incident we have missed?</h2>
+      <p>Librarians, archivists, curators and researchers are often first to know. Send us what you have, with a source link, and we will review it.</p>
+      <p><a class="btn" href="report.html">Report an incident</a> <a class="btn ghost" href="methodology.html">How GLAMSHUB works</a></p>
+    </div>
+  </section>
+</main>
+<div id="site-footer"></div>
+</body>
+</html>
